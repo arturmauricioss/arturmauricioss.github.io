@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Artur Maurício">
     <meta property="og:description" content="Currículo e Portfólio">
-    <meta property="og:image" content="https://arturmauricioss.github.io/imagens/ArturPerfil.jpg">
+    <meta property="og:image" content="https://arturmauricioss.github.io/media/arturog.jpg">
     <meta property="og:url" content="https://arturmauricioss.github.io/">
     <title>Portfólio Avallon</title>
     <link rel="stylesheet" href="styles.css">
@@ -39,7 +39,6 @@
     </header>
     <main>
         <section id="home">
-            <h2>Home</h2>
             <div class="speech-bubble">Nas próximas atualizações...</div>
             <div class="hammer"></div>
             <!-- Conteúdo da seção Home -->
@@ -50,38 +49,161 @@
             <!-- Conteúdo da seção Sobre -->
         </section>
         <section id="education">
-            <h2>Formação</h2>
-            <h2>Bacharel em Sistemas de Informação</h2>
-            <p>Janeiro de 2012 até Junho de 2016, Faculdade Adventista de Hortolândia - Hortolândia - SP</p>
-                <br>
-            <h2>Técnico Administrativo</h2>
-            <p>Janeiro de 2010 até Dezembro  de 2011, CECAPI - Serra - ES</p>
-                <br>
-            <h2>Ensino Médio</h2>
-            <p>Janeiro de 2008 até Dezembro  de 2010, EEEFM Jacaraípe - Serra - ES</p>
-            
+            <h1>Formação</h1>
+            <div class="education-container">
+                <div class="education-item item1">
+                    <h2>Bacharel em Sistemas de Informação</h2>
+                    <p>Janeiro de 2012 até Junho de 2016, Faculdade Adventista de Hortolândia - Hortolândia - SP</p>
+                </div>
+                <div class="education-item item2">
+                    <h2>Técnico Administrativo</h2>
+                    <p>Janeiro de 2010 até Dezembro de 2011, CECAPI - Serra - ES</p>
+                </div>
+                <div class="education-item item3">
+                    <h2>Ensino Médio</h2>
+                    <p>Janeiro de 2008 até Dezembro de 2010, EEEFM Jacaraípe - Serra - ES</p>
+                </div>
+            </div>
         </section>
+              
+                              
         <section id="experience">
-            <h2>Experiência</h2>
-            <h2>Associação Paulista Sudoeste / Instrutor de Informática</h2>
-            <p class="explocal">Período: Outubro de 2019 - Dezembro de 2020,Localização: Sorocaba, SP</p>
-            <p>Como instrutor de informática pela <abbr title="Associação Paulista Sudoeste">APSo</abbr>, forneci todo e qualquer suporte técnico durante a pandemia da COVID-19 ao <abbr title="Colégio Adventista de Sorocaba">CAS</abbr>, realizando configuração de salas virtuais e hibridas, gerenciamento de mídias sociais e políticas de segurança digitais.</p>
-            <br>
-            <h2>Instituto Adventista de São Paulo / Laboratorista</h2>           
-            <p class="explocal">
-            Período: Fevereiro de 2012 - Junho de 2016, Localização: Hortolândia, SP</p>
-            <p>Responsável pela manutenção dos laboratórios de informática, incluindo formatação, instalação de drivers, sistemas operacionais e ativação de licenças. Além disso, gerenciava contas de usuários através do Active Directory.</p> 
+            <h1>Experiência Relevante</h1>
+            <div class="experience-container">
+                <div class="experience-left">
+                    <h2>Instrutor de Informática</h2>
+                    <p class="explocal">Período: Outubro de 2019 - Dezembro de 2020, Localização: Sorocaba, SP</p>
+                    <p>Como instrutor de informática pela <abbr title="Associação Paulista Sudoeste">APSo</abbr>, forneci todo e qualquer suporte técnico durante a pandemia da COVID-19 ao <abbr title="Colégio Adventista de Sorocaba">CAS</abbr>, realizando configuração de salas virtuais e hibridas, gerenciamento de mídias sociais e políticas de segurança digitais.</p>
+                </div>
+                <div class="experience-right">
+                    <h2>Laboratorista</h2>           
+                    <p class="explocal">Período: Fevereiro de 2012 - Junho de 2016, Localização: Hortolândia, SP</p>
+                    <p>Responsável pela manutenção dos laboratórios de informática, incluindo formatação, instalação de drivers, sistemas operacionais e ativação de licenças. Além disso, gerenciava contas de usuários através do Active Directory.</p> 
+                </div>
+            </div>
         </section>
+        
         <section id="projects">
             <div class="speech-bubble">Nas próximas atualizações...</div>
             <div class="hammer"></div>
             <!-- Conteúdo da seção Projetos -->
         </section>
         <section id="contact">
-            <div class="speech-bubble">Nas próximas atualizações...</div>
-            <div class="hammer"></div>
-            <!-- Conteúdo da seção Contato -->
-        </section>
+            <div class="container">
+                <div class="flexcontact form-container">
+                    <form id="contactForm" method="post" action="https://formspree.io/f/xayrryag">
+                        <h1>Entre em contato</h1>
+                        <p>Coloque seus dados corretamente e logo entrarei em contato com você</p>                                       
+                        <div class="input-single">
+                            <input type="text" id="nome-box" class="input" name="nome" required>
+                            <label for="nome-box">Seu nome completo</label>
+                            <span class="error-message" id="nome-error"></span>
+                        </div>
+                        <div class="input-single">
+                            <input type="text" id="email-box" class="input" name="email" required>
+                            <label for="email-box">Seu e-mail</label>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        <div class="input-single">
+                            <input type="text" id="tel-box" class="input" name="telefone" required>
+                            <label for="tel-box">Seu telefone</label>
+                            <span class="error-message" id="tel-error"></span>
+                        </div>                
+                        <div class="btn">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+                <div class="flexcontact icons-container">
+<!-- Contatos -->   
+                    <div class="icon-category">
+                    <a href=""> <!-- Twitter -->
+                        <img class="icon" src="media/img/twitter.png" alt="">
+                    </a>
+                    <a href=""> <!-- Facebook -->
+                        <img class="icon" src="media/img/facebook.png" alt=""> 
+                    </a>
+                    <a href=""> <!-- LinkedIn -->
+                        <img class="icon" src="media/img/linkedin.png" alt="">
+                   </a>
+                    </div>
+
+
+<!-- Dev/Projetos -->
+                    <div class="icon-category">
+                    <a href=""> <!-- GitHub -->
+                        <img class="icon" src="media/img/github.png" alt="">
+                    </a>
+                    <a href=""> <!-- Reddit -->
+                        <img class="icon" src="media/img/reddit.png" alt="">
+                    </a>
+                    <a href=""> <!-- CodePen -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- FreeCodeCamp -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- DataCamp -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- SoloLearn -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- Microsoft -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- GoogleDev -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""><!-- Behance -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    </div>
+<!-- Estudos Complementares -->
+                    <div class="icon-category">
+                    <a href=""> <!-- Duolingo -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- KhanAcademy -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- GranQuestoes -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- Goodreads -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    </div>
+<!-- Relax -->
+                    <div class="icon-category">
+                    <a href=""> <!-- Youtube -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- Twitch -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- Spotify -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                     <a href=""> <!-- Myanimelist -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- IMDB -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- Steam -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- EpicGames -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    <a href=""> <!-- PlayGames -->
+                        <img class="icon" src="" alt="">
+                    </a>
+                    </div>   
+                </div>
+            </div>
+        </section>     
     </main>
     <script src="script.js"></script>
 </body>

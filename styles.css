@@ -1,20 +1,48 @@
-/* Controle Geral */
+/* Controle Geral */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
   }
+
   
+  /* --c11: #3cb371; */
+
+  :root {
+    --c11: #226d43;
+    --c22: #6a0dad;
+    --c33: #1e90ff;
+    --c44: #000000;
+    --c55: #ffffff;
+    --c66: #333333;
+
+  }
   html, body {
     margin: 0;
     padding: 0;
+    left: 0;
+    top:0;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
   }
   
   body {
     font-family: Arial, sans-serif;
   }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--c22); 
+    font-weight: 300;
+}
+/* Paletas de cores
+  roxo #6a0dad 
+  verde #3cb371
+  azul #1e90ff
+
+  */
 
 /* Fim do Controle Geral
     Inicio do Controle da Intro */
@@ -29,17 +57,19 @@
     
     #avallon, #portfolio {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #000;
+      color:var(--c44);
     }
     
     #avallon {
       font-weight: 400;
       font-size: 2.1rem;
+      color: var(--c11);
     }
     
     #portfolio {
       font-weight: 300;
       font-size: 1.8rem;
+      color:var(--c22);
     }
     
     .fade-out {
@@ -74,8 +104,8 @@
     Inicio do Controle do Header  */
   
   header {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--c66);
+    color: var(--c55);
     padding: 10px 0;
     display: none;
   }
@@ -85,8 +115,8 @@
     top: 0; /* Fixando no topo */
     width: 100%; /* Ocupando toda a largura */
     z-index: 1000; /* Definindo uma ordem de empilhamento alto para garantir que fique acima de outros elementos */
-    background-color: #333;
-    color: #fff;
+    background-color:var(--c11);
+    color:var(--c55);
     padding: 10px 0;
 }
 
@@ -102,7 +132,7 @@
   .menu-toggle {
     display: none;
     background-color: transparent; /* Definir a cor de fundo como transparente */
-    color: #fff;
+    color: var(--c55);
     border: none;
     padding: 0px;
     cursor: pointer;
@@ -111,7 +141,8 @@
   }
   
   .menu-toggle:hover {
-    background-color: #555; /* Mudar a cor de fundo no hover */
+    color: var(--c22);
+    /* background-color: var(--c22); Mudar a cor de fundo no hover */
   }
   
   
@@ -132,12 +163,16 @@
   }
   
   .menu-items a {
-    color: #fff;
+    color: var(--c55);
     text-decoration: none;
   }
-  
 
-@media (max-width: 500px) {
+  .menu-items a:hover {
+    color: var(--c22); /* Links ao passar o mouse */
+}
+
+
+@media (max-width: 520px) {
     .menu-toggle {
       display: block;
     }
@@ -148,7 +183,7 @@
       top: 100%;
       right: 0;
       width: 150px;
-      background-color: #333;
+      background-color: var(--c66);
       flex-direction: column;
     }
   
@@ -166,12 +201,12 @@
     Inicio do Controle de Main */
 
   main {
-    padding: 20px;
+    padding: 0px 0px;
     display: none;
   }
   
   section {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     min-height: 100vh; /* Minimum height of viewport */
     padding: 20px; /* Padding around content */
     display: flex;
@@ -188,30 +223,335 @@
   }
 
 /* Fim do Controle da Main
-    Inicio do controle da Sessão 1 */
+    Inicio do controle da Sessão 1 Home*/
 
-/* Fim do Controle da Sessão 1 
-    Inicio do controle da Sessão 2 */
+/* Fim do Controle da Sessão 1 Home 
+    Inicio do controle da Sessão 2 About*/
   
-/* Fim do Controle da Sessão 2 
-    Inicio do controle da Sessão 3 */
+/* Fim do Controle da Sessão 2 About
+    Inicio do controle da Sessão 3 Education*/
+    #education {
+      padding: 20px;
+      background-color: var(--c55);
+      text-align: center;
+  }
+  #education h1 {
+    color: var(--c11);
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 900;
+    
+}
+  #education h2 {
+      color: var(--c22);
+      font-size: 2em;
+      margin-bottom: 20px;
+      
+  }
+  
+  .education-container {
+      position: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .education-item {
+      background-color: var(--c55);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 70vw;
+      max-width: none;
+      position: flex;
+      margin-bottom: 20px;
+      border: 2px solid var(--c11);
+  }
+  
+  .item1 {
+      top: 0;
+      left: 0;
+  }
+  
+  .item2 {
+      top: 60px; 
+      justify-content: right;
+      margin-left: auto;
+      align-self: center;
+  }
+  
+  .item3 {
+      top: 140px;
+      margin-left: auto;
+      margin-right: auto;
+      align-self: center;
+  }
+  
+  .education-item h2 {
+      color:var(--c22);
+      font-size: 1.5em;
+  }
+  
+  p {
+      color: var(--c44);
+      line-height: 1.5;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+      .education-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      .education-item {
+          position: static;
+          width: 90vw;
+          margin: 10px 0;
+      }
+  }
+  
+    
+/* Fim do Controle da Sessão 3 Education
+    Inicio do controle da Sessão 4 Experience*/
+    #experience {
+      padding: 20px;
+      background-color: var(--c55);
+  }
+  
+  #experience h1 {
+    text-align: center;
+    color: var(--c11);
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
 
-/* Fim do Controle da Sessão 3 
-    Inicio do controle da Sessão 4 */
+  #experience h2 {
+      text-align: center;
+      color: var(--c22);
+      font-size: 2em;
+      margin-bottom: 20px;
+  }
+  
+  .experience-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; /* Alinha ao topo */
+  }
+  
+  .experience-left,
+  .experience-right {
+      flex: 1;
+      padding: 20px;
+      margin: 0 10px;
+      background-color: var(--c55);
+      border: 2px solid var(--c11);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+  }
+  
+  /* Ajusta a altura das divs para dar assimetria */
+  .experience-left {
+      margin-top: 0; /* Um pouco mais para cima */
+  }
+  
+  .experience-right {
+      margin-top: 80px; /* Um pouco mais para baixo */
+  }
+  
+  .experience-left h2,
+  .experience-right h2 {
+      color: var(--c22);
+      font-size: 1.5em;
+  }
+  
+  .explocal {
+      font-weight: bold;
+      color: var(--c66);
+      margin-bottom: 10px;
+  }
+  
+  p {
+      color: var(--c44);
+      line-height: 1.5;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+      .experience-container {
+          flex-direction: column;
+      }
+  
+      .experience-left,
+      .experience-right {
+          margin-top: 20px;
+      }
+  }
+  
+/* Fim do Controle da Sessão 4 Experience
+    Inicio do controle da Sessão 5 Projects*/
 
-/* Fim do Controle da Sessão 4 
-    Inicio do controle da Sessão 5 */
+/* Fim do Controle da Sessão 5 Projects
+    Inicio do controle da Sessão 6 Contact*/
+    #contact {
+      padding: 0;
+  }
+  
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+  }
+  
+  .flexcontact {
+    flex: 1;
+    display: flex;
+    justify-content: space-between; /* ou space-around ou space-evenly */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+}
+  
+.form-container {
+  background-color: var(--c55);
+  display: flex;
+  flex-direction: column; /* Empilhar os elementos verticalmente */
+  align-items: center; /* Centralizar horizontalmente */
+  padding: 20px;
+}
+  
+  .icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os ícones à direita */
+    padding: 20px;
+}
+  
+  .icon-category {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      padding: 20px 0px;
+  }
+  
+  form {
+      color: var(--c22);
+      padding: 20px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+  }
+  
+  form .input-single .input:valid ~ label,
+  form .input-single .input:focus ~ label {
+      transform: translateY(-24px);
+      font-size: 12px;
+      color: var(--c11);
+  }
+  
+  form input[type=submit] {
+      padding: 15px 5vw; /* Use 5vw para tornar o padding responsivo */
+      background-color: var(--c22); /* Cor de fundo do botão */
+      color:var(--c55); /* Cor do texto do botão */
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.6em;
+      transition: background-color 0.3s, transform 0.3s;
+      max-width: 100%; /* Limite a largura máxima para evitar overflow */
+  }
+  
+  form input[type=submit]:hover {
+      background-color: var(--c11); /* Cor de fundo alterada ao passar o mouse */
+      transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+  }
+  
+  form input[type=submit]:active {
+      transform: scale(0.95); /* Diminui ligeiramente o tamanho do botão quando clicado */
+  }
+  
+  form h1 {
+      text-align: center;
+      font-size: clamp(28px, 5vw, 30px); /* Tamanho da fonte responsivo com tamanho mínimo de 28px e máximo de 30px */
+      color: var(--c22);
+      white-space: nowrap;
+  }
+  
+  form p {
+      text-align: center;
+      margin: 20px 0px;
+      color: var(--c11);
+  }
+  
+  .input {
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid var(--c11); /* Apenas uma linha na parte inferior */
+      background-color: var(--c55); /* Cor de fundo da caixa de texto */
+      padding: 5px;
+      font-size: 17px;
+      outline: none;
+      transition: border-color 0.3s;
+  }
+  
+  .input:focus {
+      border-bottom: 2px solid var(--c11); /* Cor da borda inferior ao focar */
+  }
+  .input-single .input:focus {
+    border-bottom: 2px solid var(--c22); /* Borda inferior dos inputs ao focar */
+}
 
-/* Fim do Controle da Sessão 5 
-    Inicio do controle da Sessão 6 */
-
-/* Fim do Controle da Sessão 6 
+  
+  .input-single {
+      position: relative;
+      margin: 30px 0px;
+  }
+  
+  .input-single label {
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+      transition: all 0.2s;
+      cursor: text;
+  }
+  
+  .btn {
+      width: 100%;
+      text-align: center;
+  }
+  
+  .icon {
+      
+      width: 32px;
+      height: 32px;
+      margin: 10px; /* Espaçamento entre os ícones */
+  }
+  
+  @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+      }
+  
+      .flexcontact {
+          flex: none;
+          width: 100%;
+      }
+  
+      .icons-container {
+          justify-content: center;
+      }
+  }
+  
+    
+/* Fim do Controle da Sessão 6 Contact
     Inicio Animação de manutenção */
 
   .hammer {
     width: 32px;
     height: 32px;
-    background-image: url('imagens/hammer.png');
+    background-image: url('media/img/hammer.png');
     position:relative;
     left: 50%;
     top: 50%;
@@ -248,3 +588,11 @@
     }
   }
   /* Fim da Animação de manutenção */
+
+
+
+
+
+
+
+
