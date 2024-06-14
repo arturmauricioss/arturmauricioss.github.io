@@ -64,3 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', handleSubmit);
     }
 });
+document.getElementById('logosvg').addEventListener('mouseover', function() {
+    this.style.fill = 'green'; // Altera a cor quando o mouse passa por cima
+  });
+  
+  document.getElementById('logosvg').addEventListener('mouseout', function() {
+    this.style.fill = 'rgb(238,245,249)'; // Reverte a cor quando o mouse sai
+  });
+  

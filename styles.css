@@ -119,8 +119,34 @@
     color:var(--c55);
     padding: 10px 0;
 }
+ #svgp1{
+  fill:;
+ }
+ #svgp2{
+  fill:transparent;
+ }
+ #svgp3{
+  fill:;
+ }
+ #svgp4:hover{
+  fill:#800080;
+ }
+ #svgp5:hover{
+  fill:#FFA500; 
+ }
+ #svgp6:hover{
+  fill:#90EE90;
+ }
+ #svgp7:hover{
+  fill:#FFFF00;
+ }
+ #svgp8:hover{
+  fill:#1E90FF;
+ }
+ #svgp9:hover{
+  fill:#b80000;
+ }
 
-  
   .menu-container {
     position: relative;
     display: flex;
@@ -236,16 +262,17 @@
       text-align: center;
   }
   #education h1 {
-    color: var(--c11);
+    color: var(--c22);
     font-size: 3em;
     margin-bottom: 20px;
     font-weight: 900;
     
 }
   #education h2 {
-      color: var(--c22);
+      color: var(--c11);
       font-size: 2em;
       margin-bottom: 20px;
+      font-weight: 300;
       
   }
   
@@ -264,8 +291,9 @@
       width: 70vw;
       max-width: none;
       position: flex;
-      margin-bottom: 20px;
-      border: 2px solid var(--c11);
+      margin-bottom: 5px;
+      border-bottom: 2px solid var(--c22);
+      border-right: 2px solid var(--c22);
   }
   
   .item1 {
@@ -274,14 +302,14 @@
   }
   
   .item2 {
-      top: 60px; 
+      top: 50px; 
       justify-content: right;
       margin-left: auto;
       align-self: center;
   }
   
   .item3 {
-      top: 140px;
+      top: 120px;
       margin-left: auto;
       margin-right: auto;
       align-self: center;
@@ -294,6 +322,7 @@
   
   p {
       color: var(--c44);
+      font-size: 13px;
       line-height: 1.5;
   }
   
@@ -322,7 +351,7 @@
   
   #experience h1 {
     text-align: center;
-    color: var(--c11);
+    color: var(--c22);
     font-size: 3em;
     margin-bottom: 20px;
     font-weight: 900;
@@ -330,7 +359,7 @@
 
   #experience h2 {
       text-align: center;
-      color: var(--c22);
+      color: var(--c11);
       font-size: 2em;
       margin-bottom: 20px;
   }
@@ -347,7 +376,8 @@
       padding: 20px;
       margin: 0 10px;
       background-color: var(--c55);
-      border: 2px solid var(--c11);
+      border-bottom: 2px solid var(--c22);
+      border-right: 2px solid var(--c22);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: justify;
@@ -369,9 +399,9 @@
   }
   
   .explocal {
-      font-weight: bold;
       color: var(--c66);
       margin-bottom: 10px;
+      font-size: 13px;
   }
   
   p {
