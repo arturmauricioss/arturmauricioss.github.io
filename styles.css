@@ -236,7 +236,7 @@
   section {
     margin-bottom: 0px;
     min-height: 100vh; /* Minimum height of viewport */
-    padding: 80px 20px 20px 20px; /* Padding around content */
+    padding: 20px 20px 20px 20px; /* Padding around content */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -263,7 +263,7 @@
     .homecontainer {
       display: flex;
       align-items: center;
-      padding: 0px 0px 40px 0px;
+      padding: 0px 0px 0px 0px;
     }
     
     #home h1, #home span {
@@ -312,7 +312,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 4%;
+      padding: 60px 4%;
     }
     
     .aboutcontainer {
@@ -325,7 +325,7 @@
     }
     
     .aboutcontainer h1 {
-      margin: 60px 0px 0px 0px;
+      margin: 0px 0px 0px 0px;
       font-size: 2em;
     }
     
@@ -345,7 +345,7 @@
 /* Fim do Controle da Sessão 2 About
     Inicio do controle da Sessão 3 Education*/
     #education {
-
+      padding:60px 4%;
       background-color: var(--c55);
       text-align: center;
   }
@@ -354,7 +354,6 @@
     font-size: 3em;
     margin-bottom: 20px;
     font-weight: 900;
-    
 }
   #education h2 {
       color: var(--c11);
@@ -433,6 +432,7 @@
 /* Fim do Controle da Sessão 3 Education
     Inicio do controle da Sessão 4 Experience*/
     #experience {
+      padding: 60px 4%;
       background-color: var(--c55);
   }
   
@@ -514,11 +514,21 @@
   }
   
 /* Fim do Controle da Sessão 4 Experience
-    Inicio do controle da Sessão 5 Projects*/
+    Inicio do controle da Sessão 5 Works*/
+    #works{
+    padding: 60px 4%;
+  }
+    #works h1{
+      text-align: center;
+      color: var(--c22);
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
     #projects {
       display: flex;
       flex-direction: row;
-      height: 100vh; /* Isso garante que a altura do contêiner se estenda até o fundo da janela de visualização */
+      height: 450px; /* Isso garante que a altura do contêiner se estenda até o fundo da janela de visualização */
   }
   
   .proj1, .proj2, .proj3 {
@@ -536,14 +546,16 @@
     border-radius: 20px;
     border-top: none;
     border-left: none;
-    border-right: 1px solid var(--c22);
-    border-bottom: 1px solid var(--c22);
+    border-right: 3px solid var(--c22);
+    border-bottom: 2px solid var(--c22);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .proj1 h3 {
       text-align: center;
       font-weight: 900;
+      padding-top: 8px;
+      color: var(--c11);
   }
   
   #svgPreview {
@@ -578,7 +590,7 @@
   #svgCode textarea{
     height: 100%;
     width: 100%;
-    color:var(--c11); 
+    color:var(--c22); 
   }
  
   #compsvg {
@@ -593,7 +605,7 @@
 
   #compsvg button {
     padding: 0px 2vw; /* Use 5vw para tornar o padding responsivo */
-    background-color: var(--c22); /* Cor de fundo do botão */
+    background-color: var(--c11); /* Cor de fundo do botão */
     color: var(--c55); /* Cor do texto do botão */
     border: 0;
     border-radius: 5px;
@@ -605,7 +617,7 @@
   }
   
   #compsvg button:hover {
-      background-color: var(--c11); /* Cor de fundo alterada ao passar o mouse */
+      background-color: var(--c22); /* Cor de fundo alterada ao passar o mouse */
       transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
   }
   
@@ -625,7 +637,7 @@
         flex-direction: column; /* Altere a direção do layout flexível para coluna em telas pequenas */
     }
 }
-/* Fim do Controle da Sessão 5 Projects
+/* Fim do Controle da Sessão 5 Works
     Inicio do controle da Sessão 6 Contact*/
     #contact {
       padding: 0;
@@ -703,7 +715,7 @@
   
   form h1 {
       text-align: center;
-      font-size: clamp(28px, 5vw, 30px); /* Tamanho da fonte responsivo com tamanho mínimo de 28px e máximo de 30px */
+      font-size: clamp(24px, 5vw, 30px); /* Tamanho da fonte responsivo com tamanho mínimo de 28px e máximo de 30px */
       color: var(--c22);
       white-space: nowrap;
   }
@@ -784,8 +796,10 @@
     animation: hammerAnimation 1.5s infinite linear;
     z-index: 509;
     transform-origin: bottom left;
+    margin-bottom: 60px;
   }
   .speech-bubble {
+    margin-top: 60px;
     position: relative;
     padding: 10px;
     border-radius: 10px;
