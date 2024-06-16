@@ -14,6 +14,10 @@
     <title>Portfólio Avallon</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="media/img/logocolorido.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+
 </head>
 <body>
     <div class="intro">
@@ -91,17 +95,16 @@
             
         </section>
         
-        <section id="works"> 
-            <h1>Projetos</h1>
-             <div id="projects">
+    <section id="works">
+        <h1>Projetos</h1>
+        <div id="projects">
             <div class="proj1">
-
-                <h3>Editor e Compilador SVG<a href="" title="Tutorial sendo Produzido"> ?</a></h3> <!--criar tutorial-->
+                <h3>Editor e Compilador SVG<a href="tutorialsvg.html" title="Tutorial sendo Produzido - em breve proximo de 20/06/2024"> ?</a></h3>
                 <div id="svgPreview" class="quadriculado">
                     <img id="imgproj1" src="media/img/logocolorido.png" alt="Ícone de imagem">
                 </div>
                 <div id="svgCode">
-                    <textarea  placeholder="Insira o código SVG aqui"></textarea>
+                    <textarea id="svgCodeTextarea" placeholder="Insira o código SVG aqui"></textarea>
                 </div>
                 <div id="compsvg">
                     <button id="botaosvg">SVG</button>
@@ -109,16 +112,10 @@
                 </div>
                 <canvas id="canvas" style="display: none;"></canvas>
             </div>
-            <div class="proj2">
-                <div class="speech-bubble">Nas próximas atualizações...</div>
-                <div class="hammer"></div>
-            </div>
-            <div class="proj3">
-                <div class="speech-bubble">Nas próximas atualizações...</div>
-                <div class="hammer"></div>
-            </div>
-            </div>
-        </section>
+            <div class="proj2"></div>
+            <div class="proj3"></div>
+        </div>
+    </section>
         
         <section id="contact">
             <div class="container">

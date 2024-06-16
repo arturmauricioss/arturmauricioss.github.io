@@ -66,52 +66,60 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // proj1
+
+
 document.addEventListener('DOMContentLoaded', function() {
-    const svgCodeTextarea = document.querySelector('#svgCode textarea');
+    const textarea = document.getElementById('svgCodeTextarea');
+
+    // Inicializa o CodeMirror na textarea
+    const editor = CodeMirror.fromTextArea(textarea, {
+        mode: 'xml',
+        lineNumbers: true,
+        theme: 'default', // Você pode mudar o tema se desejar
+        lineWrapping: true // Permite quebra de linha
+    });
+
     const svgPreview = document.getElementById('svgPreview');
-    const fileInput = document.createElement('input'); // Criamos o campo de entrada de arquivo aqui fora
+    const fileInput = document.createElement('input');
 
     // Função para atualizar o preview com o código SVG
     function updatePreview(svgCode) {
-        svgPreview.innerHTML = ''; // Limpa o conteúdo anterior
+        svgPreview.innerHTML = '';
         const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svgElement.innerHTML = svgCode;
         svgPreview.appendChild(svgElement);
     }
 
-    // Evento de input na textarea
-    svgCodeTextarea.addEventListener('input', function() {
-        const svgCode = svgCodeTextarea.value;
-        updatePreview(svgCode); // Atualiza o preview com o novo código SVG
+    // Evento de input no CodeMirror
+    editor.on('change', function() {
+        const svgCode = editor.getValue();
+        updatePreview(svgCode);
     });
 
     // Evento de clique no campo de preview para carregar arquivo SVG
     svgPreview.addEventListener('click', function() {
-        // Configuramos o campo de entrada de arquivo
         fileInput.type = 'file';
         fileInput.accept = '.svg';
 
-        // Adiciona um evento de mudança ao campo de entrada de arquivo
         fileInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
             const reader = new FileReader();
 
             reader.onload = function() {
                 const svgCode = reader.result;
-                svgCodeTextarea.value = svgCode; // Definimos o código SVG na textarea
-                updatePreview(svgCode); // Atualizamos o preview com o novo código SVG
+                editor.setValue(svgCode);
+                updatePreview(svgCode);
             };
 
             reader.readAsText(file);
         });
 
-        // Clicamos no campo de entrada de arquivo
         fileInput.click();
     });
 
     // Evento de clique no botão para compilar SVG
     document.getElementById('botaosvg').addEventListener('click', function() {
-        const svgCode = svgCodeTextarea.value;
+        const svgCode = editor.getValue();
         const blob = new Blob([svgCode], { type: 'image/svg+xml;charset=utf-8' });
         const url = URL.createObjectURL(blob);
 
@@ -125,24 +133,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Evento de clique no botão para baixar PNG
     document.getElementById('botaopng').addEventListener('click', function() {
-        const svgCode = svgCodeTextarea.value;
+        const svgCode = editor.getValue();
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
 
-        // Cria um elemento SVG temporário para obter suas dimensões
         const tempSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         tempSvg.innerHTML = svgCode;
-        document.body.appendChild(tempSvg); // Adiciona ao body para garantir que seja renderizado
+        document.body.appendChild(tempSvg);
 
-        // Define as dimensões do canvas com base no tamanho do bounding box do SVG
         const bbox = tempSvg.getBBox();
         canvas.width = bbox.width;
         canvas.height = bbox.height;
 
-        // Limpa o canvas
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Função para renderizar SVG em canvas
         function renderSVGToCanvas(svg, canvas) {
             return new Promise((resolve, reject) => {
                 const svgData = new XMLSerializer().serializeToString(svg);
@@ -156,15 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Renderiza o SVG no canvas
         renderSVGToCanvas(tempSvg, canvas).then(() => {
-            // Converte o conteúdo do canvas em uma imagem PNG
             const dataURL = canvas.toDataURL('image/png');
-
-            // Remove o elemento SVG temporário
             document.body.removeChild(tempSvg);
 
-            // Cria um link para baixar a imagem PNG
             const a = document.createElement('a');
             a.setAttribute('download', 'generated-image.png');
             a.setAttribute('href', dataURL);
@@ -172,4 +171,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-

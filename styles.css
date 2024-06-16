@@ -581,7 +581,7 @@
   }
 
   #svgCode {
-    width: 100%;
+     width: 100%;
       height: 100px;
       margin: 4px;
       padding: 4px;
@@ -590,7 +590,7 @@
   #svgCode textarea{
     height: 100%;
     width: 100%;
-    color:var(--c22); 
+    /* color:var(--c22);  */
   }
  
   #compsvg {
@@ -637,6 +637,34 @@
         flex-direction: column; /* Altere a direção do layout flexível para coluna em telas pequenas */
     }
 }
+.CodeMirror{
+  width: 100% !important;
+}
+
+.CodeMirror-gutter{
+  width: 25px !important;
+}
+.CodeMirror-scroll{
+  padding-left: 25px !important ;
+  /* padding-right: 25px !important ; */
+  height: 100px !important;
+}
+.CodeMirror.cm-s-default.CodeMirror-wrap{
+  height: 100px !important;
+}
+/* #svgCodeTextarea.CodeMirror {
+  height: 200px !important; /* Defina a altura desejada para a textarea 
+}
+.CodeMirror-scroll{
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100px !important;
+}
+.CodeMirror.cm-s-default.CodeMirror-wrap{
+  height: 100px !important;
+} */
+
+
 /* Fim do Controle da Sessão 5 Works
     Inicio do controle da Sessão 6 Contact*/
     #contact {
