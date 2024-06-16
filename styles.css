@@ -263,6 +263,7 @@
     .homecontainer {
       display: flex;
       align-items: center;
+      padding: 0px 0px 40px 0px;
     }
     
     #home h1, #home span {
@@ -305,9 +306,6 @@
           opacity: 1;
       }
     }
-    
-    
-
 /* Fim do Controle da Sessão 1 Home 
     Inicio do controle da Sessão 2 About*/
     #about {
@@ -328,6 +326,7 @@
     
     .aboutcontainer h1 {
       margin: 60px 0px 0px 0px;
+      font-size: 2em;
     }
     
     .aboutcontainer img {
@@ -593,7 +592,7 @@
     }
 
   #compsvg button {
-    padding: 0px 3vw; /* Use 5vw para tornar o padding responsivo */
+    padding: 0px 2vw; /* Use 5vw para tornar o padding responsivo */
     background-color: var(--c22); /* Cor de fundo do botão */
     color: var(--c55); /* Cor do texto do botão */
     border: 0;
