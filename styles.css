@@ -530,15 +530,16 @@
       flex-direction: row;
       height: 450px; /* Isso garante que a altura do contêiner se estenda até o fundo da janela de visualização */
   }
+  @media screen and (max-width: 600px) { /* Defina a largura de quebrar para 600px ou qualquer valor que desejar */
+    #projects {
+        flex-direction: column; /* Altere a direção do layout flexível para coluna em telas pequenas */
+    }
+}
   
   .proj1, .proj2, .proj3 {
-      flex: 1; /* Isso faz com que as divs ocupem o espaço disponível */
-      border: 1px solid black; /* Apenas para visualização */
-      margin: 10px; /* Apenas para visualização */
-      justify-content: space-between;
-      align-items: center;
-  }
-  .proj1{
+    flex: 1; /* Isso faz com que as divs ocupem o espaço disponível */
+    border: 1px solid black; /* Apenas para visualização */
+    margin: 10px; /* Apenas para visualização */
     justify-content: center;
     align-items: center;
     max-height: 800px;
@@ -549,34 +550,62 @@
     border-right: 3px solid var(--c22);
     border-bottom: 2px solid var(--c22);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+    cursor: pointer;
+    display: flex;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
-  .proj1 h3 {
+  }
+.proj:hover {
+    background-color: var(--c22);
+}
+.proj:hover h3 {
+  color: white;
+}
+.proj:active {
+  transform: scale(0.95);
+}
+
+.proj.clicked {
+  animation: scale-up 0.3s forwards;
+}
+
+@keyframes scale-up {
+  0% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1.05);
+  }
+}
+
+  .proj h3 {
       text-align: center;
       font-weight: 900;
       padding-top: 8px;
       color: var(--c11);
+      margin: auto;
+      font-size: 30px;
   }
   
-  #svgPreview {
+  /* #svgPreview {
       width: 100%;
       height: 40%;
       margin: 4px;
       padding: 4px;
-      display: flex; /* Ativar o modelo de layout flexível */
-      justify-content: center; /* Centralizar horizontalmente */
-      align-items: center; /* Centralizar verticalmente */
-  }
+      display: flex; /* Ativar o modelo de layout flexível 
+      justify-content: center; /* Centralizar horizontalmente 
+      align-items: center; /* Centralizar verticalmente 
+  } 
   #svgPreview i {
-    font-size: 64px; /* Tamanho do ícone */
-    color: #eee; /* Cor do ícone */  
+    font-size: 64px; /* Tamanho do ícone 
+    color: #eee; /* Cor do ícone  
 }
 
   .quadriculado {
     background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc 100%);
-    background-size: 5px 5px; /* Tamanho dos quadriculados */
-    padding: 5px; /* Adiciona preenchimento à div */
-    box-sizing: border-box; /* Faz com que o preenchimento esteja incluído na largura/altura da div */
+    background-size: 5px 5px; /* Tamanho dos quadriculados 
+    padding: 5px; /* Adiciona preenchimento à div 
+    box-sizing: border-box; /* Faz com que o preenchimento esteja incluído na largura/altura da div
     mix-blend-mode: difference; 
   }
 
@@ -590,7 +619,7 @@
   #svgCode textarea{
     height: 100%;
     width: 100%;
-    /* color:var(--c22);  */
+    /* color:var(--c22);  
   }
  
   #compsvg {
@@ -604,39 +633,35 @@
     }
 
   #compsvg button {
-    padding: 0px 2vw; /* Use 5vw para tornar o padding responsivo */
-    background-color: var(--c11); /* Cor de fundo do botão */
-    color: var(--c55); /* Cor do texto do botão */
+    padding: 0px 2vw; /* Use 5vw para tornar o padding responsivo
+    background-color: var(--c11); /* Cor de fundo do botão
+    color: var(--c55); /* Cor do texto do botão 
     border: 0;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.6em;
     transition: background-color 0.3s, transform 0.3s;
-    max-width: 100%; /* Limite a largura máxima para evitar overflow */
-    margin: 0px 5px; /* Adiciona margem entre os botões */
+    max-width: 100%; /* Limite a largura máxima para evitar overflow 
+    margin: 0px 5px; /* Adiciona margem entre os botões
   }
   
   #compsvg button:hover {
-      background-color: var(--c22); /* Cor de fundo alterada ao passar o mouse */
-      transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+      background-color: var(--c22); /* Cor de fundo alterada ao passar o mouse 
+      transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão 
   }
   
   #compsvg button:active {
-      transform: scale(0.95); /* Diminui ligeiramente o tamanho do botão quando clicado */
+      transform: scale(0.95); /* Diminui ligeiramente o tamanho do botão quando clicado
   }
   
   .proj1 {
-      display: flex; /* Ativar o modelo de layout flexível */
-      flex-direction: column; /* Os elementos dentro de .proj1 serão empilhados verticalmente */
-      justify-content: space-between; /* Distribui os itens uniformemente ao longo do eixo principal (verticalmente neste caso) */
-      align-items: center; /* Centraliza os itens ao longo do eixo transversal (horizontalmente neste caso) */
+      display: flex; /* Ativar o modelo de layout flexível 
+      flex-direction: column; /* Os elementos dentro de .proj1 serão empilhados verticalmente 
+      justify-content: space-between; /* Distribui os itens uniformemente ao longo do eixo principal (verticalmente neste caso) 
+      align-items: center; /* Centraliza os itens ao longo do eixo transversal (horizontalmente neste caso) 
   }
 
-@media screen and (max-width: 600px) { /* Defina a largura de quebrar para 600px ou qualquer valor que desejar */
-    #projects {
-        flex-direction: column; /* Altere a direção do layout flexível para coluna em telas pequenas */
-    }
-}
+
 .CodeMirror{
   width: 100% !important;
 }
@@ -646,23 +671,13 @@
 }
 .CodeMirror-scroll{
   padding-left: 25px !important ;
-  /* padding-right: 25px !important ; */
+  /* padding-right: 25px !important ; 
   height: 100px !important;
 }
 .CodeMirror.cm-s-default.CodeMirror-wrap{
   height: 100px !important;
 }
-/* #svgCodeTextarea.CodeMirror {
-  height: 200px !important; /* Defina a altura desejada para a textarea 
-}
-.CodeMirror-scroll{
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 100px !important;
-}
-.CodeMirror.cm-s-default.CodeMirror-wrap{
-  height: 100px !important;
-} */
+*/
 
 
 /* Fim do Controle da Sessão 5 Works
