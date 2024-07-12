@@ -252,60 +252,78 @@
 
 /* Fim do Controle da Main
     Inicio do controle da Sessão 1 Home*/
-    #home {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%; /* Garante que o conteúdo ocupe a altura total da tela */
-      text-align: center;
-    }
-    
-    .homecontainer {
-      display: flex;
-      align-items: center;
-      padding: 0px 0px 0px 0px;
-    }
-    
-    #home h1, #home span {
-      font-size: 3em;
-      font-weight: 400;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-      animation: none; /* Remove qualquer animação individual */
-    }
-    
-    #home h1 {
-      color: var(--c22);
-      animation: slidedown 2s ease-out forwards;
-    }
-    
-    #home span {
-      color: var(--c11);
-      animation: slideX 2s ease-out forwards;
-    }
-    
-    /* Ajuste a animação slidedown */
-    @keyframes slidedown {
-      0% {
-          transform: translateY(-100%);
-          opacity: 0;
-      }
-      100% {
-          transform: translateY(0);
-          opacity: 1;
-      }
-    }
-    
-    /* Ajuste a animação slideX */
-    @keyframes slideX {
-      0% {
-          transform: translateY(100%);
-          opacity: 0;
-      }
-      100% {
-          transform: translateY(0);
-          opacity: 1;
-      }
-    }
+ /* Estilos básicos e estrutura */
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Garante que o conteúdo ocupe a altura total da viewport */
+  text-align: center;
+}
+
+.homecontainer {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+/* Estilo para os elementos específicos dentro do #home */
+#home h1, #home span {
+  font-size: 3em;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  animation: none; /* Remove qualquer animação individual */
+}
+
+/* Animações ao carregar a página */
+#home h1 {
+  color: var(--c22);
+  animation: slidedown 2s ease-out forwards;
+}
+
+#home span {
+  color: var(--c11);
+  animation: slideX 2s ease-out forwards;
+}
+
+/* Ajuste das animações */
+@keyframes slidedown {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideX {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Efeitos de hover */
+#ola,
+#exclamacao {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.homecontainer:hover #ola {
+  transform: translateX(10px); /* Move "Olá" para a direita */
+}
+
+.homecontainer:hover #exclamacao {
+  transform: translateY(-10px); /* Move "!" para cima */
+}
+
 /* Fim do Controle da Sessão 1 Home 
     Inicio do controle da Sessão 2 About*/
     #about {
@@ -713,6 +731,7 @@
     flex-direction: column;
     align-items: center; /* Alinha os ícones ao centro */
 }
+
   
   .icon-category {
       display: flex;
@@ -720,6 +739,11 @@
       padding: 0px;
   }
   
+  .icon:hover{
+    transform: scale(1.1);
+    border: 1px solid red;
+  }
+
   form {
       color: var(--c22);
       padding: 20px;
