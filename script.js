@@ -66,13 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Inicio PROJETOS
-
 function redirectToNewPage(url) {
     // Adicione a classe 'clicked' ao elemento clicado
     this.classList.add('clicked');
     setTimeout(() => {
-        // Redireciona para a URL fornecida
-        window.location.href = url;
+        // Redireciona para a URL fornecida em uma nova aba ou janela
+        window.open(url, '_blank');
     }, 300);
 }
 
@@ -87,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 //Fim de PROJETOS
 

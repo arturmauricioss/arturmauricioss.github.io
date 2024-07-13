@@ -37,6 +37,7 @@
   h1, h2, h3, h4, h5, h6 {
     color: var(--c22); 
     font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Paletas de cores
@@ -119,7 +120,7 @@
     z-index: 1000; /* Definindo uma ordem de empilhamento alto para garantir que fique acima de outros elementos */
     background-color:var(--c11);
     color:var(--c55);
-    padding: 10px 0;
+    padding: 0px 0;
 }
 /* logo easteregg */
  /* #svgp1{
@@ -151,6 +152,8 @@
  }
 
   .menu-container {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    padding: 0px 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -159,18 +162,19 @@
   }
 
   .menu-toggle {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     display: none;
     background-color: transparent; /* Definir a cor de fundo como transparente */
     color: var(--c55);
     border: none;
-    padding: 0px;
+    padding: 10px;
     cursor: pointer;
     margin-right: 4%;
     font-size: 16px; /* Tamanho da fonte */
   }
   
   .menu-toggle:hover {
-    color: var(--c22);
+    background-color: var(--c22);
     /* background-color: var(--c22); Mudar a cor de fundo no hover */
   }
   
@@ -181,6 +185,7 @@
   }
   
   .menu-items {
+    padding: 0px 0;
     list-style: none;
     display: flex;
     justify-content: flex-end; /* Alinhar os itens à direita */
@@ -188,7 +193,7 @@
 }
   
   .menu-items li {
-    margin-left: 20px;
+    padding: 10px 10px;
   }
   
   .menu-items a {
@@ -196,8 +201,9 @@
     text-decoration: none;
   }
 
-  .menu-items a:hover {
-    color: var(--c22); /* Links ao passar o mouse */
+  ul.menu-items li:hover {
+    color: var(--c55);
+    background-color: var(--c22); /* Links ao passar o mouse */
 }
 
 @media (max-width: 520px) {
@@ -210,19 +216,28 @@
       position: absolute;
       top: 100%;
       right: 0;
-      width: 150px;
-      background-color: var(--c66);
+      width: 130px;
+      background-color: var(--c11);
       flex-direction: column;
+      border-bottom-left-radius: 6px; /* Adiciona arredondamento ao canto inferior esquerdo */
+      border-bottom-right-radius: 6px; /* Adiciona arredondamento ao canto inferior direito */
+     
     }
   
     .menu-items li {
-      margin: 10px 0;
+      margin: 3px 5px;
+      padding: 7px 5px;
       text-align: center;
+      border-radius: 4px;
     }
   
     .menu-items.active {
       display: flex;
     }
+    ul.menu-items li:hover {
+      color: var(--c55);
+      background-color: var(-22); /* Links ao passar o mouse */
+  }
   }
 
 /* Fim do Controle de Header
@@ -740,8 +755,9 @@
   }
   
   .icon:hover{
-    transform: scale(1.1);
-    border: 1px solid red;
+    animation: circularMotion 2s linear infinite;
+
+
   }
 
   form {
@@ -830,10 +846,58 @@
       text-align: center;
   }
   
+  /* @keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+} */
+/* @keyframes pendulum {
+  0% {
+    transform: rotate(0deg);
+}
+25% {
+    transform: rotate(-15deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(15deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+
+
+} */
+
+@keyframes circularMotion {
+  0% {
+    transform: rotate(0deg);
+}
+25% {
+    transform: rotate(-25deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(25deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+
+}
+
   .icon {
       width: 32px;
       height: 32px;
       margin: 10px; /* Espaçamento entre os ícones */
+      transition: transform 0.9s ease;
   }
   
   @media (max-width: 768px) {
