@@ -591,7 +591,8 @@
 /* Fim do Controle da Sessão 4 Experience
     Inicio do controle da Sessão 5 Works*/
     #works{
-    padding: 60px 4%;
+    padding: 60px 5px;
+    margin: 20px;
   }
     #works h1{
       text-align: center;
