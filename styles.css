@@ -88,7 +88,6 @@
           opacity: 0; /* Opacidade final */
       }
     }
-    
     .fade-in {
       opacity: 0; /* Inicialmente invisível */
       animation: fadeIn 1s ease forwards; /* Animação fadeIn com duração de 1 segundo */
@@ -102,6 +101,7 @@
           opacity: 1; /* Opacidade final */
       }
     }
+    
 
 /* Fim do Controle da Intro 
     Inicio do Controle do Header  */
