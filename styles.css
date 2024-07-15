@@ -33,6 +33,7 @@
   
   body {
     font-family: Arial, sans-serif;
+    overflow: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     color: var(--c22); 
@@ -109,7 +110,7 @@
   header {
     background-color: var(--c66);
     color: var(--c55);
-    padding: 10px 0;
+    padding: 0px 0;
     display: none;
   }
   
@@ -250,16 +251,17 @@
     padding: 0px 0px;
     display: none;
     margin: 0;
-  }
+}
   
   section {
     margin-top: 0;
     margin-bottom: 0px;
     min-height: 100vh; /* Minimum height of viewport */
-    padding: 20px 20px 20px 20px; /* Padding around content */
+    padding: 0; /* Padding around content */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
   }
   
   h2 {
@@ -272,79 +274,7 @@
 
 /* Fim do Controle da Main
     Inicio do controle da Sessão 1 Home*/
- /* Estilos básicos e estrutura */
-#home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Garante que o conteúdo ocupe a altura total da viewport */
-  text-align: center;
-}
-
-.homecontainer {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-/* Estilo para os elementos específicos dentro do #home */
-#home h1, #home span {
-  font-size: 3em;
-  font-weight: 400;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-  animation: none; /* Remove qualquer animação individual */
-}
-
-/* Animações ao carregar a página */
-#home h1 {
-  color: var(--c22);
-  animation: slidedown 2s ease-out forwards;
-}
-
-#home span {
-  color: var(--c11);
-  animation: slideX 2s ease-out forwards;
-}
-
-/* Ajuste das animações */
-@keyframes slidedown {
-  0% {
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-@keyframes slideX {
-  0% {
-      transform: translateY(100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-/* Efeitos de hover */
-#ola,
-#exclamacao {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.homecontainer:hover #ola {
-  transform: translateX(10px); /* Move "Olá" para a direita */
-}
-
-.homecontainer:hover #exclamacao {
-  transform: translateY(-10px); /* Move "!" para cima */
-}
-
-/* Fim do Controle da Sessão 1 Home 
+ /* Estilos básicos e estrutura  
     Inicio do controle da Sessão 2 About*/
     #about {
       display: flex;
@@ -352,7 +282,6 @@
       align-items: center;
       padding: 60px 4%;
       background-color:#fff;
-      margin: 0;
       }
     
     .aboutcontainer {
@@ -1003,11 +932,30 @@
     }
   }
   /* Fim da Animação de manutenção */
+main {
+  overflow-y: scroll;
+  height: 100%;
+  padding-right: 0px; /* Espaço para a barra de rolagem personalizada */
+  scroll-behavior: smooth;
+  box-sizing: content-box;
+}
 
+main::-webkit-scrollbar {
+  width: 14px; /* Largura da barra de rolagem */
+  position: absolute;
+}
 
+main::-webkit-scrollbar-track {
+  background:transparent;
+  margin-top: 45px;
+}
 
+main::-webkit-scrollbar-thumb {
+  background: var(--c22); 
+  border: 3px solid white;
+  border-radius: 6px;
+}
 
-
-
-
-
+main::-webkit-scrollbar-thumb:hover {
+  background: var(--c11); 
+}
