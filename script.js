@@ -176,12 +176,11 @@ document.addEventListener('scroll', function() {
         footerInfo.style.display = 'none'; // Oculta a div quando a última seção não estiver visível
     }
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     const inputs = document.querySelectorAll('.input-single .input');
 
     inputs.forEach(input => {
-        // Verifica se o campo já está preenchido
+        // Verifica se o campo já está preenchido ao carregar a página
         if (input.value) {
             input.classList.add('filled');
         }
