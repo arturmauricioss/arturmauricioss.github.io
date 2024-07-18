@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
             setTimeout(function() {
                 portfolio.style.display = 'none';
             }, 500);
-        }, 500); // Atraso de 500ms (0.5 segundo) para ocultar o portfolio
+        }, 500);
     }, 3500);
 });
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Fim de PROJETOS
 
-// proj1
+// proj1 scripts antes da mudança
 
 
 // document.addEventListener('DOMContentLoaded', function() {
@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
 //     const editor = CodeMirror.fromTextArea(textarea, {
 //         mode: 'xml',
 //         lineNumbers: true,
-//         theme: 'default', // Você pode mudar o tema se desejar
-//         lineWrapping: true // Permite quebra de linha
+//         theme: 'default', 
+//         lineWrapping: true 
 //     });
 
 //     const svgPreview = document.getElementById('svgPreview');
 //     const fileInput = document.createElement('input');
 
-//     // Função para atualizar o preview com o código SVG
+//     // Função de atualizar o preview apartir do código SVG
 //     function updatePreview(svgCode) {
 //         svgPreview.innerHTML = '';
 //         const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
