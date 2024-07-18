@@ -151,7 +151,11 @@
     justify-content: flex-end; /* Alinhar os itens à direita */
     flex-grow: 1; /* Permitir que o menu-container cresça conforme necessário */
   }
-
+  .menu-container a:hover,
+  .menu-container a:focus,
+  .menu-container a:active{
+    outline: none;
+  }
   .menu-toggle {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     display: none;
@@ -177,6 +181,11 @@
     margin: 9px 2px 2px;
 
   }
+  .logo:focus,
+  .logo:active {
+      animation: changeColors 5s infinite; /* Altere a duração conforme desejado */
+  }
+
   .menu-items {
     padding: 0px 0;
     list-style: none;
@@ -184,7 +193,12 @@
     justify-content: flex-end; /* Alinhar os itens à direita */
     margin-right: 20px; /* Adicionar um espaço à direita */
 }
-  
+.menu-items a:hover,
+.menu-items a:focus,
+.menu-items a:active {
+  outline: none;
+  background-color: var(--c22);
+}
   .menu-items li {
     padding: 10px 10px;
   }
@@ -194,10 +208,10 @@
     text-decoration: none;
   }
 
-  ul.menu-items li:hover {
+  /* ul.menu-items li:hover {
     color: var(--c55);
     background-color: var(--c22); /* mudar com dos Links ao passar o mouse */
-}
+/* }  */
 
 @media (max-width: 520px) {
     .menu-toggle {
@@ -273,7 +287,17 @@ main::-webkit-scrollbar-thumb:hover {
     justify-content: center;
     margin: 0;
   }
-  
+  .tabindex{
+    outline: none;
+  }
+  .proj[tabindex]:focus {
+    background-color: var(--c22);
+
+}
+.proj[tabindex]:focus h3 {
+  color: white;
+}
+
   h2 {
     font-size: 24px;
   }
@@ -531,7 +555,7 @@ main::-webkit-scrollbar-thumb:hover {
     Inicio do controle da Sessão 5 Works*/
     #works{
     padding: 60px 5px;
-    margin: 20px;
+    margin: 0px;
   }
     #works h1{
       text-align: center;
@@ -543,7 +567,7 @@ main::-webkit-scrollbar-thumb:hover {
     #projects {
       display: flex;
       flex-direction: row;
-      height: 450px; /* Isso garante que a altura do contêiner se estenda até o fundo da janela de visualização */
+      height: 400px; /* Isso garante que a altura do contêiner se estenda até o fundo da janela de visualização */
   }
   @media screen and (max-width: 600px) { /* Defina a largura de quebra */
     #projects {
@@ -605,6 +629,7 @@ main::-webkit-scrollbar-thumb:hover {
     Inicio do controle da Sessão 6 Contact*/
     #contact {
       padding: 0;
+      position: relative;
   }
   
   .container {
@@ -644,9 +669,13 @@ main::-webkit-scrollbar-thumb:hover {
   
   .icon:hover{
     animation: circularMotion 0.5s linear infinite;
-
-
   }
+/* Estilização da borda de foco */
+.icon-category a:focus {
+  outline: none;
+  border-radius: 50%;
+  animation: circularMotion 0.5s linear infinite;
+}
 
   form {
       color: var(--c22);
@@ -709,7 +738,14 @@ main::-webkit-scrollbar-thumb:hover {
       transition: border-color 0.3s;
       color: var(--c22);
   }
-  
+  /* Estilo para preenchimento automático */
+.input-single input:-webkit-autofill,
+.input-single input:-webkit-autofill:hover,
+.input-single input:-webkit-autofill:focus,
+.input-single input:-webkit-autofill:active {
+    -webkit-text-fill-color:var(--c22); /* Cor do texto preenchido automaticamente */
+    transition: background-color 5000s ease-in-out 0s; /* Remove o fundo amarelo padrão */
+}
   .input:focus {
       border-bottom: 2px solid var(--c11); /* Cor da borda inferior ao focar */
   }
@@ -734,6 +770,27 @@ main::-webkit-scrollbar-thumb:hover {
       width: 100%;
       text-align: center;
   }
+  /* Estilização da borda de foco */
+.btn input:focus {
+  background-color: var(--c11);
+  border: none;
+  outline: none;
+}
+
+  .hidden {
+    display: none;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    max-width: 360px;
+}
 
 @keyframes circularMotion {
 0% {
@@ -756,8 +813,10 @@ main::-webkit-scrollbar-thumb:hover {
       width: 50px;
       height: 50px;
       margin: 10px; /* Espaçamento entre os ícones */
+      vertical-align: middle;
       transition: transform 0.9s ease;
   }
+  
   
   @media (max-width: 768px) {
       .container {
@@ -818,3 +877,14 @@ main::-webkit-scrollbar-thumb:hover {
     }
   }
   /* Fim da Animação de manutenção */
+  #footer-info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: var(--c11);
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    display: block; /* Torna a div visível apenas na última seção */
+}

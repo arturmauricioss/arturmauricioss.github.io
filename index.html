@@ -49,8 +49,7 @@
         </section>  -->
         
 
-        <section id="about">
-            <!-- Espaçamento no celular nao esta agradavel -->
+        <section id="about" tabindex="0" class="tabindex">
             <div class="aboutcontainer">
                 <h1>Um pouco de mim</h1>
                 <div class="image-container">
@@ -64,7 +63,7 @@
             </div>
         </section>
           
-        <section id="education">
+        <section id="education" tabindex="0" class="tabindex">
             <h1>Formação</h1>
             <div class="education-container">
                 <div class="education-item item1">
@@ -82,7 +81,7 @@
             </div>
         </section>
                                         
-        <section id="experience">
+        <section id="experience" tabindex="0" class="tabindex">
             <h1>Experiência <span>Relevante</span></h1>
             <div class="experience-container">
                 <div class="experience-left">
@@ -99,10 +98,10 @@
             
         </section>
         
-    <section id="works">
+    <section id="works" tabindex="0" class="tabindex">
         <h1>Projetos</h1>
         <div id="projects">
-            <div class="proj1 proj" data-url="../avallonsvg/svg.html" target="_blank" title="atualizado em 15/07/24">
+            <div class="proj1 proj tabindex" tabindex="0" data-url="../avallonsvg/svg.html" target="_blank" title="atualizado em 15/07/24">
                 <h3>Avallon SVG</h3>
             </div>
             <!-- antes o projeto funcionava por aqui mesmo mas decidi remover para otimizar a pagina principal
@@ -120,16 +119,16 @@
                 </div>
                 <canvas id="canvas" style="display: none;"></canvas>
             </div> -->
-            <div class="proj2 proj" data-url="../rpg2/rpg2.html" target="_blank" title="atualizado em 18/07/24">
+            <div class="proj2 proj tabindex" tabindex="0" data-url="../rpg2/rpg2.html" target="_blank" title="atualizado em 18/07/24">
                 <h3>Avallon RPG</h3>
             </div>
-            <div class="proj3 proj" data-url="../qrcoder/index.html" target="_blank" title="atualizado em 15/07/24">
+            <div class="proj3 proj tabindex" tabindex="0" data-url="../qrcoder/index.html" target="_blank" title="atualizado em 15/07/24">
                 <h3>Avallon QR Code</h3>
             </div>
         </div>
     </section>
         
-        <section id="contact">
+        <section id="contact" tabindex="-1">
             <div class="container">
                 <div class="flexcontact form-container">
                     <form id="contactForm" method="post" action="https://formspree.io/f/xayrryag">
@@ -146,7 +145,7 @@
                             <span class="error-message" id="email-error"></span>
                         </div>
                         <div class="input-single">
-                            <input type="text" id="tel-box" class="input" name="telefone" required>
+                            <input type="text" id="tel-box" class="input" name="telefone" required style=>
                             <label for="tel-box">Seu telefone</label>
                             <span class="error-message" id="tel-error"></span>
                         </div>                
@@ -154,6 +153,10 @@
                             <input type="submit" value="Enviar">
                         </div>
                     </form>
+                    <div id="custom-alert" class="custom-alert hidden">
+                        <span id="alert-message"></span>
+                    </div>
+                
                 </div>
                 <div class="flexcontact icons-container">
 <!-- Contatos -->   
@@ -176,7 +179,11 @@
                     </div>
                 </div>
             </div>
-        </section>     
+            <div id="footer-info">
+                Site em desenvolvimento atualizado em: 18/07/2024
+            </div>  
+        </section>  
+
     </main>
     <script src="script.js"></script>
 </body>

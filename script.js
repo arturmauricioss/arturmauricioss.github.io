@@ -2,7 +2,6 @@ function toggleMenu() {
     const menuItems = document.querySelector('.menu-items');
     menuItems.classList.toggle('active');
 }
-
 window.addEventListener('load', function() {
     setTimeout(function() {
         const avallon = document.getElementById('avallon');
@@ -11,6 +10,12 @@ window.addEventListener('load', function() {
         setTimeout(function() {
             document.querySelector('header').style.display = 'block';
             document.querySelector('main').style.display = 'block';
+            
+            // Focar no main após a animação inicial
+            const mainElement = document.querySelector('main');
+            mainElement.style.display = 'block'; // Garante que o main esteja visível
+            mainElement.focus(); // Foca no main
+            
         }, 1000);
 
         setTimeout(function() {
@@ -23,6 +28,8 @@ window.addEventListener('load', function() {
         }, 500);
     }, 3500);
 });
+
+
 
 function handleSubmit(event) {
     event.preventDefault(); // Evita que o formulário seja enviado normalmente
@@ -46,16 +53,42 @@ function handleSubmit(event) {
         // Verificar se a requisição foi bem-sucedida
         if (xhr.status === 200) {
             // Exibir uma mensagem de sucesso
-            alert('Formulário enviado com sucesso!');
+            showAlert('Dados enviados com sucesso!', true);
         } else {
             // Exibir uma mensagem de erro
-            alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.');
+            showAlert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.', false);
         }
     };
 
     // Enviar os dados do formulário
     xhr.send(formData);
 }
+
+function showAlert(message, success, formType) {
+    const alertBox = document.getElementById('custom-alert');
+    const alertMessage = document.getElementById('alert-message');
+
+    alertMessage.textContent = message;
+    alertBox.style.backgroundColor = success ? '#226d43f8' : '#e74c3cf8'; 
+    alertBox.style.borderColor = success ? '#00ff00' : '#ff0000'; 
+    alertBox.style.color = success ? '#ffffff' : '#ffffff'; 
+    
+
+    alertBox.classList.remove('hidden');
+   // --c11: #226d43;
+   // --c22: #6a0dad;
+    // Fechar automaticamente após 2 segundos
+    setTimeout(function() {
+        closeAlert();
+    }, 2000);
+}
+
+
+function closeAlert() {
+    const alertBox = document.getElementById('custom-alert');
+    alertBox.classList.add('hidden');
+}
+
 
 // Adicionando um event listener para o formulário
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-//Inicio PROJETOS
+// Inicio PROJETOS
 function redirectToNewPage(url) {
     // Adicione a classe 'clicked' ao elemento clicado
     this.classList.add('clicked');
@@ -85,6 +118,63 @@ document.addEventListener('DOMContentLoaded', function() {
             redirectToNewPage.call(this, url);
         });
     });
+});
+// Array com as IDs das partes do SVG e suas cores correspondentes em hover
+const svgHoverColors = {
+    'svgp4': '#800080',
+    'svgp5': '#FFA500',
+    'svgp6': '#90EE90',
+    'svgp7': '#FFFF00',
+    'svgp8': '#1E90FF',
+    'svgp9': '#b80000'
+};
+
+// Função para selecionar uma parte do SVG aleatoriamente
+function getRandomSvgId() {
+    const ids = Object.keys(svgHoverColors);
+    return ids[Math.floor(Math.random() * ids.length)];
+}
+
+// Função para mudar a cor de uma parte do SVG para a cor de hover correspondente
+function changeRandomPartColor() {
+    const randomSvgId = getRandomSvgId();
+    const svgElement = document.getElementById(randomSvgId);
+    svgElement.style.fill = svgHoverColors[randomSvgId];
+    
+    // Define um timeout para voltar a cor para branco após 100ms
+    setTimeout(function() {
+        svgElement.style.fill = '#ffffff'; // Branco
+    }, 100);
+}
+
+// Intervalo para mudar aleatoriamente as cores das partes do SVG
+let intervalId;
+
+// Função para iniciar o efeito de pisca pisca
+function startBlinking() {
+    intervalId = setInterval(changeRandomPartColor, 500);
+}
+
+// Função para parar o efeito de pisca pisca
+function stopBlinking() {
+    clearInterval(intervalId);
+}
+
+// Adiciona eventos ao elemento .logo para iniciar/parar o efeito de pisca pisca
+const logo = document.querySelector('.logo');
+logo.addEventListener('focus', startBlinking);
+logo.addEventListener('blur', stopBlinking);
+
+document.addEventListener('scroll', function() {
+    const footerInfo = document.getElementById('footer-info');
+    const worksSection = document.getElementById('works');
+    const worksRect = worksSection.getBoundingClientRect();
+
+    if (worksRect.top <= window.innerHeight && worksRect.bottom >= 0) {
+        footerInfo.style.display = 'block'; // Mostra a div quando a última seção estiver visível
+    } else {
+        footerInfo.style.display = 'none'; // Oculta a div quando a última seção não estiver visível
+    }
 });
 
 
