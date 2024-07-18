@@ -176,12 +176,11 @@ document.addEventListener('scroll', function() {
         footerInfo.style.display = 'none'; // Oculta a div quando a última seção não estiver visível
     }
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     const inputs = document.querySelectorAll('.input-single .input');
 
     const checkInputValue = (input) => {
-        if (input.value) {
+        if (input.value.trim() !== '') {
             input.classList.add('filled');
         } else {
             input.classList.remove('filled');
@@ -210,20 +209,15 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', () => {
             checkInputValue(input);
         });
+    });
 
-        // Observa alterações no DOM para detectar preenchimento automático do navegador
-        const observer = new MutationObserver(() => {
+    // Verifica periodicamente o valor dos campos para capturar prévias dos navegadores
+    setInterval(() => {
+        inputs.forEach(input => {
             checkInputValue(input);
         });
-
-        observer.observe(input, {
-            attributes: true,
-            childList: true,
-            subtree: true
-        });
-    });
+    }, 1000); // Intervalo de 1 segundo
 });
-
 
 //Fim de PROJETOS
 
