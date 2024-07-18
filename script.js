@@ -210,15 +210,20 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', () => {
             checkInputValue(input);
         });
-    });
 
-    // Adiciona um intervalo para verificar preenchimento automático do navegador
-    setInterval(() => {
-        inputs.forEach(input => {
+        // Observa alterações no DOM para detectar preenchimento automático do navegador
+        const observer = new MutationObserver(() => {
             checkInputValue(input);
         });
-    }, 500);
+
+        observer.observe(input, {
+            attributes: true,
+            childList: true,
+            subtree: true
+        });
+    });
 });
+
 
 //Fim de PROJETOS
 
