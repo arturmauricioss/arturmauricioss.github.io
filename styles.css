@@ -290,13 +290,8 @@ main::-webkit-scrollbar-thumb:hover {
   .tabindex{
     outline: none;
   }
-  .proj[tabindex]:focus {
-    background-color: var(--c22);
 
-}
-.proj[tabindex]:focus h3 {
-  color: white;
-}
+
 
   h2 {
     font-size: 24px;
@@ -595,11 +590,23 @@ main::-webkit-scrollbar-thumb:hover {
 
   }
 .proj:hover {
-    background-color: var(--c22);
+    background-color: var(--c11);
+    border-right: 3px solid var(--c11);
+    border-bottom: 2px solid var(--c11);
 }
 .proj:hover h3 {
   color: white;
 }
+.proj[tabindex]:focus {
+  background-color: var(--c11);
+  border-right: 3px solid var(--c11);
+  border-bottom: 2px solid var(--c11);
+
+}
+.proj[tabindex]:focus h3 {
+color: white;
+}
+
 .proj:active {
   transform: scale(0.95);
 }
