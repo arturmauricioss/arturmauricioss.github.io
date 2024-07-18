@@ -177,48 +177,48 @@ document.addEventListener('scroll', function() {
     }
 });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const inputs = document.querySelectorAll('.input-single .input');
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.input-single .input');
 
-        const checkInputValue = (input) => {
-            if (input.value) {
-                input.classList.add('filled');
-            } else {
-                input.classList.remove('filled');
-            }
-        };
+    const checkInputValue = (input) => {
+        if (input.value) {
+            input.classList.add('filled');
+        } else {
+            input.classList.remove('filled');
+        }
+    };
 
-        inputs.forEach(input => {
-            // Verifica se o campo já está preenchido ao carregar a página
-            checkInputValue(input);
+    inputs.forEach(input => {
+        // Verifica se o campo já está preenchido ao carregar a página
+        checkInputValue(input);
 
-            // Adiciona ou remove a classe 'filled' ao focar ou desfocar o campo
-            input.addEventListener('focus', () => {
-                input.classList.add('filled');
-            });
-
-            input.addEventListener('blur', () => {
-                checkInputValue(input);
-            });
-
-            // Adiciona evento 'input' para verificar mudanças no valor do campo
-            input.addEventListener('input', () => {
-                checkInputValue(input);
-            });
-
-            // Adiciona evento 'change' para capturar preenchimento automático do navegador
-            input.addEventListener('change', () => {
-                checkInputValue(input);
-            });
+        // Adiciona ou remove a classe 'filled' ao focar ou desfocar o campo
+        input.addEventListener('focus', () => {
+            input.classList.add('filled');
         });
 
-        // Adiciona um intervalo para verificar preenchimento automático do navegador
-        setInterval(() => {
-            inputs.forEach(input => {
-                checkInputValue(input);
-            });
-        }, 500);
+        input.addEventListener('blur', () => {
+            checkInputValue(input);
+        });
+
+        // Adiciona evento 'input' para verificar mudanças no valor do campo
+        input.addEventListener('input', () => {
+            checkInputValue(input);
+        });
+
+        // Adiciona evento 'change' para capturar preenchimento automático do navegador
+        input.addEventListener('change', () => {
+            checkInputValue(input);
+        });
     });
+
+    // Adiciona um intervalo para verificar preenchimento automático do navegador
+    setInterval(() => {
+        inputs.forEach(input => {
+            checkInputValue(input);
+        });
+    }, 500);
+});
 
 //Fim de PROJETOS
 
