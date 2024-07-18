@@ -177,6 +177,27 @@ document.addEventListener('scroll', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.input-single .input');
+
+    inputs.forEach(input => {
+        // Verifica se o campo já está preenchido
+        if (input.value) {
+            input.classList.add('filled');
+        }
+
+        // Adiciona ou remove a classe 'filled' ao focar ou desfocar o campo
+        input.addEventListener('focus', () => {
+            input.classList.add('filled');
+        });
+
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                input.classList.remove('filled');
+            }
+        });
+    });
+});
 
 //Fim de PROJETOS
 
