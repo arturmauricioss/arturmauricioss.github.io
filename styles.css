@@ -587,23 +587,27 @@ Inicio do controle da Sessão 5 Works*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: flex;
+  position: relative; /* Adicionado para posicionar o vídeo dentro da div */
+  overflow: hidden; /* Garante que o vídeo não saia da área da div */
+  
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
+
 .proj:hover {
-  background-color: var(--c11);
   border-right: 3px solid var(--c11);
   border-bottom: 2px solid var(--c11);
 }
 .proj:hover h3 {
-  color: white;
+  color: var(--c22);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .proj[tabindex]:focus {
-  background-color: var(--c11);
   border-right: 3px solid var(--c11);
   border-bottom: 2px solid var(--c11);
 }
 .proj[tabindex]:focus h3 {
-  color: white;
+  color: var(--c22);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .proj:active {
@@ -630,7 +634,38 @@ Inicio do controle da Sessão 5 Works*/
   color: var(--c11);
   margin: auto;
   font-size: 30px;
+  position: relative;
+  z-index: 1;
 }
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* Define a opacidade baixa do vídeo */
+  transition: opacity 0.3s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Adiciona uma camada escura sobre o vídeo */
+  transition: opacity 0.3s;
+}
+
+.proj:hover .overlay {
+  opacity: 0; /* Remove a camada escura quando o mouse passa sobre a div */
+}
+.proj:focus .overlay {
+  opacity: 0; /* Remove a camada escura quando o mouse passa sobre a div */
+}
+
+
 /* Fim do Controle da Sessão 5 Works
 Inicio do controle da Sessão 6 Contact*/
 #contact {
@@ -846,6 +881,18 @@ form p {
     justify-content: center;
   }
 }
+#footer-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--c11);
+  padding: 10px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1000;
+  display: block;
+}
+
 /* Fim do Controle da Sessão 6 Contact
 Inicio Animação de manutenção */
 
@@ -891,14 +938,3 @@ Inicio Animação de manutenção */
   }
 }
 /* Fim da Animação de manutenção */
-#footer-info {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: var(--c11);
-  padding: 10px 5px;
-  border-radius: 5px;
-  font-size: 14px;
-  z-index: 1000;
-  display: block;
-}
